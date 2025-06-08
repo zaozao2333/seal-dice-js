@@ -1,4 +1,4 @@
-var filename = 'sealdice-js-ext.js'
+var filename = 'random-shuffler.js'
 
 module.exports = {
   dev: {

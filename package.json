@@ -1,10 +1,10 @@
 {
   "name": "a-long-story",
-  "version": "1.0.0",
-  "description": "once upon a time, ...",
+  "version": "1.1.5",
+  "description": "随机打乱参数顺序的指令",
   "main": "build/index.js",
   "typings": "build/index.d.ts",
-  "repository": "https://github.com/sealdice/seal-swordworld",
+  "repository": "https://github.com/zaozao2333/Dice-Script",
   "license": "Apache-2.0",
   "keywords": [],
   "scripts": {
