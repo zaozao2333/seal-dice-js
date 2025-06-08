@@ -3,6 +3,14 @@ function main() {
   if (!ext) {
     ext = seal.ext.new('RandomShuffler', 'zaozao', '1.1.5');
     seal.ext.register(ext);
+
+    // 注册字符串类型的配置项，用于自定义结果前缀
+    seal.ext.registerStringConfig(
+      ext,
+      'who_prefix',
+      '交给我来分配吗？我明白了：\n',
+      '随机分配结果的前缀文本'
+    );
   }
 
   const cmdWho = seal.ext.newCmdItemInfo();
@@ -15,6 +23,10 @@ function main() {
   cmdWho.solve = (ctx, msg, cmdArgs) => {
     // 清除代骰前缀显示
     ctx.delegateText = "";
+
+    // 获取配置的前缀文本，如果未设置则使用默认值
+    const prefix = seal.ext.getStringConfig(ext, 'who_prefix') || '交给我来分配吗？我明白了：\n';
+
     // 1. 获取所有参数：普通参数 + 艾特参数
     let options = [];
 
@@ -40,7 +52,7 @@ function main() {
     }
 
     // 4. 构建结果
-    let result = "交给我来分配吗？我明白了：\n";
+    let result = prefix;  // 使用配置的前缀
     options.forEach((item, index) => {
       // 使用正则提取纯数字QQ号
       const qqMatch = item.match(/[1-9]\d{4,11}/); // 匹配5-12位QQ号
