@@ -4,7 +4,7 @@
   "description": "随机打乱参数顺序的指令",
   "main": "build/index.js",
   "typings": "build/index.d.ts",
-  "repository": "https://github.com/zaozao2333/Dice-Script",
+  "repository": "https://github.com/zaozao2333/seal-dice-js",
   "license": "Apache-2.0",
   "keywords": [],
   "scripts": {
